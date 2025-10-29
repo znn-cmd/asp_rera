@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Глава 8. Сервисы и «умные» системы DLD/RERA - Дубай RERA Broker 2025</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 1200px; margin: 0 auto; padding: 20px; line-height: 1.6; }
+        header { background: #2c3e50; color: white; padding: 20px; margin-bottom: 30px; }
+        h1 { color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 10px; }
+        h2 { color: #34495e; margin-top: 30px; }
+        .nav { margin: 20px 0; }
+        .nav a { background: #3498db; color: white; padding: 10px 20px; text-decoration: none; margin: 5px; border-radius: 5px; }
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 12px; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Дубай RERA Broker 2025: от нуля до сделок</h1>
+        <div>
+            <a href="index.html">Оглавление</a>
+            <a href="../en/chapter-8.html">English</a>
+        </div>
+    </header>
+    
+    <div class="nav"><a href="chapter-7.html">← Предыдущая</a><a href="index.html">Главная</a><a href="chapter-9.html">Следующая →</a>    </div>
+    
+    <article><div id="section-8-1"><h2>8.1. Картина целиком: как сервисы связаны между собой</h2>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='mso-list:l316 level1 lfo105;tab-stops:list 36.0pt'><b>Dubai
+     REST / Dubai <span class=SpellE>Brokers</span> <span class=SpellE>App</span></b>
+     — рабочая «панель» брокера: создание и подписание <span class=SpellE><b>Contract</b></span><b>
+     A/B/F</b>, статус заявок (<span class=SpellE><b>Pending</b></span><b> <span
+     class=SpellE>Requests</span> &#8594; <span class=SpellE>Approved</span>
+     &#8594; My <span class=SpellE>Contracts</span></b>), новые <span
+     class=SpellE>пермисты</span> и управление ими. Это<span style='mso-ansi-language:
+     EN-US'> </span>прямо<span style='mso-ansi-language:EN-US'> </span>указано<span
+     style='mso-ansi-language:EN-US'> </span>в<span style='mso-ansi-language:
+     EN-US'> </span>официальной<span style='mso-ansi-language:EN-US'> </span>структуре<span
+     lang=EN-US style='mso-ansi-language:EN-US'> Dubai Brokers App (</span>разделы<span
+     lang=EN-US style='mso-ansi-language:EN-US'> «Create Contract A / F / B»,
+     «Pending Requests», «New Permits», «My Contracts»). <o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l316 level1 lfo105;tab-stops:list 36.0pt'><span
+     class=SpellE><b>Trakheesi</b></span> — система <span class=SpellE>пермистов</span>
+     RERA. Публиковать объявления и маркетинг можно <b>только после</b>
+     подписания <span class=SpellE>Contract</span> A и получения <b>Advertising
+     <span class=SpellE>Permit</span></b> через <span class=SpellE>Trakheesi</span>
+     (либо из REST). </li>
+ <li class=MsoNormal style='mso-list:l316 level1 lfo105;tab-stops:list 36.0pt'><span
+     class=SpellE><b>Ejari</b></span> — регистрация договоров аренды
+     (обязательная). Без <span class=SpellE>Ejari</span> договор не защищён и
+     не попадает в индексацию; в учебных материалах прямо <span class=GramE>спрашивается</span>
+     как «обязательная регистрация в <span class=SpellE>DLD’s</span> <span
+     class=SpellE>Ejari</span> <span class=SpellE>system</span>». </li>
+ <li class=MsoNormal style='mso-list:l316 level1 lfo105;tab-stops:list 36.0pt'><b>RDC
+     (<span class=SpellE>Rental</span> <span class=SpellE>Dispute</span>
+     Center)</b> — <span class=SpellE>спеццентр</span> по спорам аренды:
+     отдельная юрисдикция/апелляции/собственная служба исполнения, ориентирован
+     на скорость и прозрачность. </li>
+</ul>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+</div><div id="section-8-2"><h2>8.2. Trakheesi: пермисты
+и управление листингами</h2>
+
+<p class=MsoNormal><b>8.2.1. Что такое <span class=SpellE>Trakheesi</span> и
+когда он нужен<o:p></o:p></b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='mso-list:l393 level1 lfo106;tab-stops:list 36.0pt'>Это
+     «ворота на маркетинг»: <b>после</b> подписания <span class=SpellE><b>Contract</b></span><b>
+     A</b> между собственником и брокером вы вправе рекламировать объект <b>только</b>
+     получив разрешение (<span class=SpellE>permit</span>) <b>через <span
+     class=SpellE>Trakheesi</span></b> или <b>через REST</b>. </li>
+ <li class=MsoNormal style='mso-list:l393 level1 lfo106;tab-stops:list 36.0pt'>В
+     обучающих материалах RERA подчеркивается: <b>все рекламные материалы</b>
+     (включая соцсети) должны содержать <b>RERA <span class=SpellE>Permit</span>
+     Number</b> листинга. </li>
+</ul>
+
+<p class=MsoNormal><b>8.2.2. Поток работы (пошагово)<o:p></o:p></b></p>
+
+<ol style='margin-top:0cm' start=1 type=1>
+ <li class=MsoNormal style='mso-list:l442 level1 lfo107;tab-stops:list 36.0pt'><span
+     class=SpellE><b>Contract</b></span><b> A в REST</b> &#8594; <span
+     class=SpellE>селлеру</span> уходит ссылка на согласование/е-подпись; после
+     одобрения <span class=SpellE><b>Contract</b></span><b> A действителен</b>,
+     и вы можете подавать на <span class=SpellE>пермист</span>. </li>
+ <li class=MsoNormal style='mso-list:l442 level1 lfo107;tab-stops:list 36.0pt'><b>Подача
+     на <span class=SpellE>Permit</span></b> в <b>New <span class=SpellE>Permits</span></b>
+     (через Dubai <span class=SpellE>Brokers</span> <span class=SpellE>App</span>/REST),
+     мониторинг в <span class=SpellE><b>Pending</b></span><b> <span
+     class=SpellE>Requests</span></b>, проверка в <span class=SpellE><b>Permits</b></span>.
+     </li>
+ <li class=MsoNormal style='mso-list:l442 level1 lfo107;tab-stops:list 36.0pt'><b>Публикация</b>
+     — только после выдачи номера <span class=SpellE>пермиста</span>; номер
+     обязан присутствовать везде. </li>
+</ol>
+
+<p class=MsoNormal><b>8.2.3. Практические советы<o:p></o:p></b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='mso-list:l20 level1 lfo108;tab-stops:list 36.0pt'>Обновляйте
+     <b>личный <span class=SpellE>e-mail</span> и мобильный</b> в <span
+     class=SpellE>Trakheesi</span> — это влияет на управление клиентскими
+     запросами из REST. </li>
+ <li class=MsoNormal style='mso-list:l20 level1 lfo108;tab-stops:list 36.0pt'>Управляйте
+     «портфелем» объявлений ответственно: не заводите лишнего, что <b>не можете
+     качественно вести</b>. Это отдельный этический акцент RERA для
+     листинг-агентов. </li>
+</ul>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+</div><div id="section-8-3"><h2>8.3. Dubai REST / Dubai
+Brokers App: Contracts A/B/F, статусы и архив</h2>
+
+<p class=MsoNormal><b>8.3.1. Что внутри приложения (для брокера)<o:p></o:p></b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='mso-list:l231 level1 lfo109;tab-stops:list 36.0pt'><span
+     class=SpellE><b>Dashboard</b></span>:<br>
+     — <span class=SpellE><b>Pending</b></span><b> <span class=SpellE>Requests</span></b>
+     (все поданные, ждут утверждения),<br>
+     — <b>New <span class=SpellE>Permits</span> / <span class=SpellE>Permits</span></b>
+     (создание/управление <span class=SpellE>пермистами</span>),<br>
+     — <span class=SpellE><b>Create</b></span><b> <span class=SpellE>Contract</span>
+     A / F / B</b>,<br>
+     — <b>My <span class=SpellE>Contracts</span></b> (архив/действующие). </li>
+</ul>
+
+<p class=MsoNormal><b><span lang=EN-US style='mso-ansi-language:EN-US'>8.3.2.
+Contract A (</span>листинг</b><b><span lang=EN-US style='mso-ansi-language:
+EN-US'>) — </span>зачем</b><b><span style='mso-ansi-language:EN-US'> </span>через</b><b><span
+lang=EN-US style='mso-ansi-language:EN-US'> REST<o:p></o:p></span></b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='mso-list:l307 level1 lfo110;tab-stops:list 36.0pt'>Сразу
+     формализует мандат; <b>ссылка на e-подпись</b> уходит продавцу; после
+     акцепта контракт <b>юридически действителен</b> и даёт право подавать на <span
+     class=SpellE>пермист</span>. </li>
+</ul>
+
+<p class=MsoNormal><b><span lang=EN-US style='mso-ansi-language:EN-US'>8.3.3.
+Contract B (buyer/tenant agency) — </span>где</b><b><span style='mso-ansi-language:
+EN-US'> </span>и</b><b><span style='mso-ansi-language:EN-US'> </span>как</b><b><span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='mso-list:l32 level1 lfo111;tab-stops:list 36.0pt'><b>Доступен</b><b><span
+     style='mso-ansi-language:EN-US'> </span>в</b><b><span lang=EN-US
+     style='mso-ansi-language:EN-US'> Dubai REST (</span>раздел</b><b><span
+     lang=EN-US style='mso-ansi-language:EN-US'> Dubai Brokers)</span></b><span
+     lang=EN-US style='mso-ansi-language:EN-US'>: </span>клиент<span
+     style='mso-ansi-language:EN-US'> </span>отправляет<span lang=EN-US
+     style='mso-ansi-language:EN-US'> «request to buy», </span>брокер<span
+     style='mso-ansi-language:EN-US'> </span>заполняет<span style='mso-ansi-language:
+     EN-US'> </span>и<span style='mso-ansi-language:EN-US'> </span>оформляет<span
+     style='mso-ansi-language:EN-US'> <b><span lang=EN-US>Contract B</span></b><span
+     lang=EN-US>. <o:p></o:p></span></span></li>
+</ul>
+
+<p class=MsoNormal><b><span lang=EN-US style='mso-ansi-language:EN-US'>8.3.4.
+Contract F (MOU </span>для</b><b><span lang=EN-US style='mso-ansi-language:
+EN-US'> secondary)<o:p></o:p></span></b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='mso-list:l217 level1 lfo112;tab-stops:list 36.0pt'>Создаётся
+     в приложении, подшивается в пакет на <b>NOC</b> и к <span class=SpellE><b>Trustee</b></span><b>/DLD</b>;
+     экономит время на контроле версии и подписях (связка с профилями сторон в
+     системе). </li>
+</ul>
+
+<p class=MsoNormal><b><span lang=EN-US style='mso-ansi-language:EN-US'>8.3.5.
+Must-do </span>чек</b><b><span lang=EN-US style='mso-ansi-language:EN-US'>-</span>лист</b><b><span
+style='mso-ansi-language:EN-US'> </span>по</b><b><span lang=EN-US
+style='mso-ansi-language:EN-US'> REST/Brokers App<o:p></o:p></span></b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='mso-list:l122 level1 lfo113;tab-stops:list 36.0pt'><b>Создавать
+     A/B/F только с полными данными</b>: адрес/юнит/парковки/включения — иначе
+     отказы/правки в NOC/<span class=SpellE>Trustee</span>.</li>
+ <li class=MsoNormal style='mso-list:l122 level1 lfo113;tab-stops:list 36.0pt'>Держать
+     <b>версии и статусы</b>: <span class=SpellE>Pending</span> &#8594; <span
+     class=SpellE>Approved</span> &#8594; My <span class=SpellE>Contracts</span>,
+     не удалять старые версии (аудит-<span class=SpellE>трейл</span>). </li>
+ <li class=MsoNormal style='mso-list:l122 level1 lfo113;tab-stops:list 36.0pt'><b>Показывать
+     RERA Smart Card</b> из REST/DLD и работать <b>только</b> с
+     лицензированными коллегами. </li>
+ <li class=MsoNormal style='mso-list:l122 level1 lfo113;tab-stops:list 36.0pt'><b>Верифицировать
+     <span class=SpellE>Ownership</span> <span class=SpellE>Certificate</span></b>
+     через Dubai <span class=SpellE>Brokers</span> <span class=SpellE>App</span>
+     перед любым контрактом. </li>
+</ul>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+</div><div id="section-8-4"><h2>8.4. Ejari: обучение, допуск и регистрация
+договоров аренды</h2>
+
+<p class=MsoNormal><b>8.4.1. Зачем <span class=SpellE>Ejari</span><o:p></o:p></b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='mso-list:l108 level1 lfo114;tab-stops:list 36.0pt'>Это
+     обязательная регистрация аренды в DLD: без неё договор не защищён и не
+     учитывается системой индексации/споров. В учебных материалах RERA прямой
+     правильный ответ: <b>«обязательно в <span class=SpellE>DLD’s</span> <span
+     class=SpellE>Ejari</span> <span class=SpellE>system</span>»</b>. </li>
+</ul>
+
+<p class=MsoNormal><b>8.4.2. Кто и как регистрирует<o:p></o:p></b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='mso-list:l334 level1 lfo115;tab-stops:list 36.0pt'>Регистрацию
+     осуществляют уполномоченные офисы/брокеры (после прохождения процедур
+     допуска в системе) либо сами стороны через онлайн-сервисы.</li>
+ <li class=MsoNormal style='mso-list:l334 level1 lfo115;tab-stops:list 36.0pt'>Пакет:
+     данные сторон, объекта, срока, платежей, депозита + сканы; на выходе — <span
+     class=SpellE><b>Ejari</b></span><b> <span class=SpellE>Certificate</span></b>
+     (его спрашивают банки, RDC и др.). </li>
+</ul>
+
+<p class=MsoNormal><b>8.4.3. Кому нельзя подписывать «обычный» фикс-терм<o:p></o:p></b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='mso-list:l103 level1 lfo116;tab-stops:list 36.0pt'>Нерезидентам
+     без валидной резидентской визы — объяснить правила и <b>отказать</b> в
+     сопровождении, переадресовать в <span class=SpellE>short</span>-<span
+     class=SpellE>let</span>-сегмент. Это отдельно тестируется в материалах
+     (правильный ответ — «проинформировать и отказать, перенаправить к <span
+     class=SpellE>short-term</span>»). </li>
+</ul>
+
+<p class=MsoNormal><b>8.4.4. Базовые ошибки<o:p></o:p></b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='mso-list:l260 level1 lfo117;tab-stops:list 36.0pt'>Отсутствие
+     <span class=SpellE>Ejari</span> &#8594; уязвимость в спорах (RDC).</li>
+ <li class=MsoNormal style='mso-list:l260 level1 lfo117;tab-stops:list 36.0pt'>Некорректные
+     данные по сторонам/объекту — проблемы при индексации и выселении.</li>
+</ul>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+</div><div id="section-8-5"><h2>8.5. RDC — Rental Dispute
+Center: когда обращаться, юрисдикция и скорость</h2>
+
+<p class=MsoNormal><b>8.5.1. Роль и юрисдикция<o:p></o:p></b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='mso-list:l196 level1 lfo118;tab-stops:list 36.0pt'>Специализированный
+     <b>центр урегулирования споров по аренде</b> (входит в «ландшафт»
+     DLD-системы). Для ряда зон-исключений (например, <b>DIFC</b> с собственным
+     судом) RDC юрисдикцию <b>не</b> осуществляет, но даже там <span
+     class=SpellE><b>Decree</b></span><b> 43/2013</b> (лимиты повышения аренды)
+     применяется при определении индекса. </li>
+ <li class=MsoNormal style='mso-list:l196 level1 lfo118;tab-stops:list 36.0pt'>По
+     мелким искам: <b>до AED 100,000 решения не <span class=SpellE>апеллируются</span></b>;
+     у RDC есть <b>собственная служба исполнения</b>, что сокращает сроки. </li>
+</ul>
+
+<p class=MsoNormal><b>8.5.2. Когда обращаться<o:p></o:p></b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='mso-list:l361 level1 lfo119;tab-stops:list 36.0pt'>Неоплата/задержка
+     ренты, нарушение условий, незаконное повышение/отказ регистрировать <span
+     class=SpellE>Ejari</span>, выселение после <b>30-дневного уведомления</b>
+     при неоплате и др. (эти кейсы отдельно разбираются в учебных вопросах и
+     ответах). </li>
+</ul>
+
+<p class=MsoNormal><b>8.5.3. Как подаётся и как идёт процесс<o:p></o:p></b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='mso-list:l0 level1 lfo120;tab-stops:list 36.0pt'><b>Онлайн
+     и офлайн</b> каналы; <b>Smart <span class=SpellE>Judge</span> / e-сервисы</b>;
+     акцент на <b>скорость, эффективность и прозрачность</b> процедур
+     (официально подчёркнуто в материалах). </li>
+ <li class=MsoNormal style='mso-list:l0 level1 lfo120;tab-stops:list 36.0pt'>При
+     передаче споров специальному Комитету (напр., по отменённым проектам) —
+     дела <b>освобождаются от госпошлины</b>, решения <b>окончательные, без
+     права апелляции</b>, а текущие судебные дела <b>передаются</b> в Комитет. </li>
+</ul>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+</div><div id="section-8-6"><h2>8.6. «Комбо-кейсы»: как сервисы работают вместе (сценарии)</h2>
+
+<p class=MsoNormal><b>Сценарий A. <span class=SpellE>Secondary</span>-сделка
+«под ключ»<o:p></o:p></b></p>
+
+<ol style='margin-top:0cm' start=1 type=1>
+ <li class=MsoNormal style='mso-list:l66 level1 lfo121;tab-stops:list 36.0pt'><span
+     class=SpellE><b>Contract</b></span><b> A</b> в REST &#8594; e-подпись <span
+     class=SpellE>селлера</span>. </li>
+ <li class=MsoNormal style='mso-list:l66 level1 lfo121;tab-stops:list 36.0pt'><span
+     class=SpellE><b>Trakheesi</b></span><b> <span class=SpellE>Permit</span></b>
+     &#8594; публикация. </li>
+ <li class=MsoNormal style='mso-list:l66 level1 lfo121;tab-stops:list 36.0pt'>Покупатель
+     под <span class=SpellE><b>Contract</b></span><b> B</b> (из Dubai <span
+     class=SpellE>Brokers</span> раздела). </li>
+ <li class=MsoNormal style='mso-list:l66 level1 lfo121;tab-stops:list 36.0pt'><span
+     class=SpellE>Оффер</span> &#8594; <span class=SpellE><b>Contract</b></span><b>
+     F (MOU)</b> &#8594; NOC девелопера &#8594; <span class=SpellE>Trustee</span>/DLD.
+     </li>
+</ol>
+
+<p class=MsoNormal><b>Сценарий B. Долгосрочная аренда<o:p></o:p></b></p>
+
+<ol style='margin-top:0cm' start=1 type=1>
+ <li class=MsoNormal style='mso-list:l437 level1 lfo122;tab-stops:list 36.0pt'>Листинг
+     &#8594; <span class=SpellE>Permit</span> (если рекламируем) &#8594;
+     проверка статуса арендатора. </li>
+ <li class=MsoNormal style='mso-list:l437 level1 lfo122;tab-stops:list 36.0pt'>Подписание
+     <b>Unified <span class=SpellE>Tenancy</span> <span class=SpellE>Contract</span></b>
+     и регистрация <span class=SpellE><b>Ejari</b></span>. </li>
+ <li class=MsoNormal style='mso-list:l437 level1 lfo122;tab-stops:list 36.0pt'>Спор/индексация
+     — <b>RDC</b> (быстрые и прозрачные процедуры). </li>
+</ol>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<p class=MsoNormal><b>8.7. Быстрые шпаргалки (для печати)<o:p></o:p></b></p>
+
+<p class=MsoNormal><span class=SpellE><b>Trakheesi</b></span><b> / <span
+class=SpellE>Permits</span></b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='mso-list:l121 level1 lfo123;tab-stops:list 36.0pt'><span
+     lang=EN-US style='mso-ansi-language:EN-US'>Contract A </span>подписан<span
+     lang=EN-US style='mso-ansi-language:EN-US'> (REST) &#8594; </span>подаём<span
+     lang=EN-US style='mso-ansi-language:EN-US'> Permit (New Permits).<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l121 level1 lfo123;tab-stops:list 36.0pt'><span
+     class=SpellE>Permit</span> № в каждом объявлении/баннере/посте. </li>
+ <li class=MsoNormal style='mso-list:l121 level1 lfo123;tab-stops:list 36.0pt'>Контакты
+     брокера в <span class=SpellE>Trakheesi</span> актуальны. </li>
+</ul>
+
+<p class=MsoNormal><b>REST / Dubai <span class=SpellE>Brokers</span> <span
+class=SpellE>App</span></b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='mso-list:l297 level1 lfo124;tab-stops:list 36.0pt'>Рабочие<span
+     style='mso-ansi-language:EN-US'> </span>разделы<span lang=EN-US
+     style='mso-ansi-language:EN-US'>: Pending Requests / New Permits / Permits
+     / Create Contract <span class=GramE>A,F</span>,B / My Contracts. <o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l297 level1 lfo124;tab-stops:list 36.0pt'>Верификация
+     права собственности через <span class=SpellE>App</span> до контрактов. </li>
+</ul>
+
+<p class=MsoNormal><span class=SpellE><b>Ejari</b></span></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='mso-list:l356 level1 lfo125;tab-stops:list 36.0pt'>Регистрация
+     обязательна; без неё — риски в RDC. </li>
+ <li class=MsoNormal style='mso-list:l356 level1 lfo125;tab-stops:list 36.0pt'>Нерезидент
+     без визы — отказ и переадресация в <span class=SpellE>short-let</span>. </li>
+</ul>
+
+<p class=MsoNormal><b>RDC</b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='mso-list:l89 level1 lfo126;tab-stops:list 36.0pt'>Споры
+     по аренде, быстрая процедура, прозрачность/Smart-сервисы. </li>
+ <li class=MsoNormal style='mso-list:l89 level1 lfo126;tab-stops:list 36.0pt'>До
+     AED 100k — без апелляции; свой <span class=SpellE>enforcement</span>. </li>
+</ul>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+</div><div id="section-8-8"><h2>8.8. Типичные ошибки и как их избежать</h2>
+
+<ol style='margin-top:0cm' start=1 type=1>
+ <li class=MsoNormal style='mso-list:l376 level1 lfo127;tab-stops:list 36.0pt'><b>Реклама
+     без <span class=SpellE>Trakheesi</span></b> &#8594; чёрные баллы/штрафы.
+     Всегда получайте <span class=SpellE>Permit</span> и ставьте его номер во
+     всех публикациях. </li>
+ <li class=MsoNormal style='mso-list:l376 level1 lfo127;tab-stops:list 36.0pt'><span
+     class=SpellE><b>Contract</b></span><b> A вне REST</b> (бумажка в столе)
+     &#8594; нет e-валидации, споры по полномочиям/датам; оформляйте через <span
+     class=SpellE>App</span>. </li>
+ <li class=MsoNormal style='mso-list:l376 level1 lfo127;tab-stops:list 36.0pt'><b>Игнор</b><b><span
+     lang=EN-US style='mso-ansi-language:EN-US'> «Pending &#8594; Approved
+     &#8594; My Contracts»</span></b><span lang=EN-US style='mso-ansi-language:
+     EN-US'> &#8594; </span>путаница<span style='mso-ansi-language:EN-US'> </span>версий<span
+     lang=EN-US style='mso-ansi-language:EN-US'>, </span>отказы<span
+     lang=EN-US style='mso-ansi-language:EN-US'> NOC/Trustee. </span>Держите
+     порядок в <span class=SpellE>App</span>. </li>
+ <li class=MsoNormal style='mso-list:l376 level1 lfo127;tab-stops:list 36.0pt'><b>Отсутствие
+     <span class=SpellE>Ejari</span></b> &#8594; слабая позиция в
+     споре/индексации. Регистрируйте договоры. </li>
+ <li class=MsoNormal style='mso-list:l376 level1 lfo127;tab-stops:list 36.0pt'><b>Непонимание
+     юрисдикции</b> (DIFC <span class=SpellE>vs</span> RDC) &#8594; «не туда
+     подали». Проверяйте исключения. </li>
+</ol>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+</div><div id="section-8-9"><h2>8.9. Мини-практикум (30–45 минут)</h2>
+
+<p class=MsoNormal><b>Задание 1.</b> Оформите вторичный листинг «с нуля»: <span
+class=SpellE>Contract</span> A &#8594; <span class=SpellE>Permit</span> &#8594;
+<span class=SpellE>Draft</span> <span class=SpellE>Contract</span> F; сохраните
+все версии в <b>My <span class=SpellE>Contracts</span></b>. (Проверка: есть ли <span
+class=SpellE>Permit</span> № на макете объявления?) <br>
+<b>Задание 2.</b> Подготовьте пакет на <span class=SpellE><b>Ejari</b></span>
+по жилой аренде; сформируйте чек-лист документов и создайте памятку клиенту о
+правах/границах индексации. <br>
+<b>Задание 3.</b> Разберите кейс спора по аренде: выберите, куда подавать (RDC
+или исключение), какие сроки/риск апелляции, и как ускорить исполнение решения.
+</p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+</div><div id="section-8-10"><h2>8.10. Резюме главы (1 страница)</h2>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='mso-list:l362 level1 lfo128;tab-stops:list 36.0pt'><b>REST/<span
+     class=SpellE>Brokers</span> <span class=SpellE>App</span></b> — ваш центр
+     управления сделками (A/B/F, <span class=SpellE>пермисты</span>, статусы,
+     архив). </li>
+ <li class=MsoNormal style='mso-list:l362 level1 lfo128;tab-stops:list 36.0pt'><span
+     class=SpellE><b>Trakheesi</b></span> — обязательный <span class=SpellE><b>permit</b></span>
+     для любой рекламы, номер должен быть в каждом объявлении. </li>
+ <li class=MsoNormal style='mso-list:l362 level1 lfo128;tab-stops:list 36.0pt'><span
+     class=SpellE><b>Ejari</b></span> — обязательная регистрация аренды (иначе
+     риски в спорах/индексации). </li>
+ <li class=MsoNormal style='mso-list:l362 level1 lfo128;tab-stops:list 36.0pt'><b>RDC</b>
+     — быстрая, прозрачная юрисдикция по аренде; до AED 100k — без апелляции;
+     собственная служба исполнения. Исключения: зоны с собственными судами
+     (DIFC). </li>
+</ul>
+
+<span style='font-size:12.0pt;line-height:115%;font-family:"Aptos",sans-serif;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:Aptos;mso-fareast-theme-font:
+minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:"Times New Roman";
+mso-bidi-theme-font:minor-bidi;mso-ansi-language:RU;mso-fareast-language:EN-US;
+mso-bidi-language:AR-SA'><br clear=all style='mso-special-character:line-break;
+page-break-before:always'>
+</span>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+</div>    </article>
+    
+    <div class="nav"><a href="chapter-7.html">← Предыдущая</a><a href="index.html">Главная</a><a href="chapter-9.html">Следующая →</a>    </div>
+</body>
+</html>
