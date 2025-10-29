@@ -1,0 +1,23 @@
+{
+  "name": "asp-rera",
+  "version": "1.0.0",
+  "description": "Dubai RERA Broker 2025 - Bilingual training website",
+  "main": "docs/index.html",
+  "scripts": {
+    "deploy": "vercel --prod"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/znn-cmd/asp_rera.git"
+  },
+  "keywords": [
+    "rera",
+    "dubai",
+    "broker",
+    "real-estate",
+    "training"
+  ],
+  "author": "",
+  "license": "MIT"
+}
+

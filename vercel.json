@@ -1,24 +1,12 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "docs/**",
-      "use": "@vercel/static"
-    }
-  ],
+  "buildCommand": null,
+  "outputDirectory": "docs",
   "routes": [
-    {
-      "src": "/",
-      "dest": "/docs/index.html"
-    },
-    {
-      "src": "/ru/(.*)",
-      "dest": "/docs/ru/$1"
-    },
-    {
-      "src": "/en/(.*)",
-      "dest": "/docs/en/$1"
-    }
+    { "src": "/", "dest": "/index.html" },
+    { "src": "/ru", "dest": "/ru/index.html" },
+    { "src": "/en", "dest": "/en/index.html" },
+    { "src": "/(.*)", "dest": "/$1" }
   ]
 }
 
